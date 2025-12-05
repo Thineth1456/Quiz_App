@@ -40,7 +40,26 @@ function Quiz(){
     options: ["React", "Laravel", "Django", "Flask"],
     answer: "React"
   }
-];
+]
 
+  return <div>
+    {questions.map((question,qNo)=>{
+      return<div key={qNo}>
+      <h2>{question.question}</h2>
+      {
+    questions[qNo].options.map((optionQ,index) => {
+      return <div key={index}>
+        <h6>{optionQ}</h6>
+      </div>
+    })
+  }
 
+      </div>
+      
+
+    })}
+
+  </div>
 }
+
+export default Quiz;
